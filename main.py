@@ -17,15 +17,11 @@ def prompt():
     # message['answer'] = question + "coubehhh {:D"
     return message
 
-<<<<<<< HEAD
 @app.route('/question', methods=['GET'])
 def ask():
     Questioncours = {}
     Questioncours['answer'] = "Bonjour"
     return Questioncours
-=======
-# Question
->>>>>>> 2cf716b8f6630e1b6660134e8410b8be138f57a0
 
 if __name__ == '__main__':
     app.run()
