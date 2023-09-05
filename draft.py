@@ -77,6 +77,45 @@
 
 # print(run_conversation())
 
+# ------
+
+# def split_text(text, chunk_size=5000):
+#     """
+#     Splits the given text into chunks of approximately the specified chunk size.
+#     Args:
+#     text (str): The text to split.
+#     chunk_size (int): The desired size of each chunk (in characters).
+#     Returns:
+#     List[str]: A list of chunks, each of approximately the specified chunk size.
+#     """
+
+#     chunks = []
+#     current_chunk = StringIO()
+#     current_size = 0
+#     sentences = sent_tokenize(text)
+#     for sentence in sentences:
+#         sentence_size = len(sentence)
+#         if sentence_size > chunk_size:
+#             while sentence_size > chunk_size:
+#                 chunk = sentence[:chunk_size]
+#                 chunks.append(chunk)
+#                 sentence = sentence[chunk_size:]
+#                 sentence_size -= chunk_size
+#                 current_chunk = StringIO()
+#                 current_size = 0
+#         if current_size + sentence_size < chunk_size:
+#             current_chunk.write(sentence)
+#             current_size += sentence_size
+#         else:
+#             chunks.append(current_chunk.getvalue())
+#             current_chunk = StringIO()
+#             current_chunk.write(sentence)
+#             current_size = sentence_size
+#     if current_chunk:
+#         chunks.append(current_chunk.getvalue())
+#     return chunks
+
+# chunks = split_text(document)
 
 
 # demo_text = """In topology, knot theory is the study of mathematical knots. While inspired by knots which appear in daily life, such as those in shoelaces and rope, a mathematical knot differs in that the ends are joined so it cannot be undone, the simplest knot being a ring (or "unknot"). In mathematical language, a knot is an embedding of a circle in 3-dimensional Euclidean space, R 3 \mathbb {R} ^{3}. Two mathematical knots are equivalent if one can be transformed into the other via a deformation of R 3 \mathbb {R} ^{3} upon itself (known as an ambient isotopy); these transformations correspond to manipulations of a knotted string that do not involve cutting it or passing it through itself.
