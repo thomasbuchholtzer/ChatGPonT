@@ -17,6 +17,7 @@ def prompt():
     # message['answer'] = question + "coubehhh {:D"
     return message
 
+# Question
 @app.route('/question', methods=['GET'])
 def ask():
     Questioncours = {}
