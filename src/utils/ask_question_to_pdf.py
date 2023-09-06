@@ -77,6 +77,7 @@ def ask_chatGPT(prompts):
         ]
     ]
 
+
 # print(ask_chatGPT(["Who are you ?"]))
 
 
