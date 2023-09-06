@@ -72,8 +72,7 @@ def ask_chatGPT(prompts):
     return [
         response["message"]["content"]
         for response in responses[
-            "cho \
-    ices"
+            "choices"
         ]
     ]
 
