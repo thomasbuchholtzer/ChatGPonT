@@ -26,7 +26,7 @@ def ask():
     Questioncours = {}
     # Questioncours["answer"] = "Bonjour"
     Questioncours["answer"] = ask_question_to_pdf("Pose-moi une question \
-    sur le document suivant")[0] 
+    sur le document suivant")[0]
     return Questioncours
 
 
