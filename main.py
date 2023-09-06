@@ -30,14 +30,14 @@ def ask():
     return Questioncours
 
 
-@app.route("/answer", methods=['POST'])
+@app.route("/answer", methods=["POST"])
 def answer():
     donnereponse = {}
     reponse = request.form["prompt"]
     donnereponse["answer"] = ask_question_to_pdf(reponse + "ma \
-    reponse est-elle just ? Si non, quelle était la réponse ?")[0]
+    reponse est-elle juste ? Si non, quelle était la réponse ?")[0]
     return donnereponse
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     app.run()
