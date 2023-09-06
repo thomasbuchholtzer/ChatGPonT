@@ -3,6 +3,7 @@ const submitButton = document.getElementById("submit-button");
 const questionButton = document.getElementById("question-button");
 const messagesContainer = document.getElementById("messages-container");
 const lightDarkToggle = document.getElementById("light-dark-button");
+const newCoursesLink = document.getElementById("rammstein");
 
 const appendHumanMessage = (message) => {
   const humanMessageElement = document.createElement("div");
