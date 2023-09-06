@@ -46,7 +46,7 @@ def answer():
 
 
 # Formulaire
-@app.route('/choose_course', methods=["GET"])
+@app.route("/choose_course", methods=["GET"])
 def choose_course():
     return render_template("choose_course.html")
 
