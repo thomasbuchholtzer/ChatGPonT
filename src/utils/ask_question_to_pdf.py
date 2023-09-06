@@ -4,6 +4,7 @@ from sys import exit
 import fitz
 import openai
 from dotenv import load_dotenv
+
 # from nltk.tokenize import sent_tokenize
 
 load_dotenv()
@@ -65,15 +66,19 @@ else:
 def ask_chatGPT(prompts):
     messages = [{"role": "user", "content": prompt} for prompt in prompts]
     responses = openai.ChatCompletion.create(
-        model="gpt-3.5-turbo-0613",
-        messages=messages
+        model="gpt-3.5-turbo-0613", messages=messages
     )
     # response["choices"][0]["message"]["content"]
-    return [response["message"]["content"] for response in responses["cho \
-    ices"]]
-
+    return [
+        response["message"]["content"]
+        for response in responses[
+            "cho \
+    ices"
+        ]
+    ]
 
 # print(ask_chatGPT(["Who are you ?"]))
+
 
 def ask_question_to_pdf(question, txtinput=document):
     return ask_chatGPT([question + " : " + txtinput])

@@ -14,7 +14,7 @@ def index():
 @app.route("/prompt", methods=["POST"])
 def prompt():
     message = {}
-    question = request.form["prompt"] 
+    question = request.form["prompt"]
     message["answer"] = ask_question_to_pdf(question)[0]
     # message["answer"] = question + "coubehhh {:D"
     return message
@@ -25,8 +25,10 @@ def prompt():
 def ask():
     Questioncours = {}
     # Questioncours["answer"] = "Bonjour"
-    Questioncours["answer"] = ask_question_to_pdf("Pose-moi une question \
-    sur le document suivant")[0]
+    Questioncours["answer"] = ask_question_to_pdf(
+        "Pose-moi une question \
+    sur le document suivant"
+    )[0]
     return Questioncours
 
 
@@ -34,8 +36,11 @@ def ask():
 def answer():
     donnereponse = {}
     reponse = request.form["prompt"]
-    donnereponse["answer"] = ask_question_to_pdf(reponse + "ma \
-    reponse est-elle juste ? Si non, quelle était la réponse ?")[0]
+    donnereponse["answer"] = ask_question_to_pdf(
+        reponse
+        + "ma \
+    reponse est-elle juste ? Si non, quelle était la réponse ?"
+    )[0]
     return donnereponse
 
 
