@@ -27,25 +27,21 @@
           </div>
         </section>
 
-        <form id="prompt-form" class="prompt-container">
-          <label for="prompt" class="prompt-label">Du hast mich</label>
+        <form id="file-form" class="prompt-container">
+          <label for="file" class="prompt-label">Du hast mich</label>
 
           <input
             type="text"
-            id="prompt"
-            name="prompt"
-            class="prompt-input"
+            id="file"
+            name="file"
+            class="file-input"
             autocomplete="off"
           />
 
-          <button type="submit" class="button" id="submit-button">Willst du bis der Tod euch scheidet</button>
-
-          <button type="button" class="button" id="question-button">
-            NEIN !
-          </button>
+          <button type="submit" class="button" id="submit-file-button">Willst du bis der Tod euch scheidet</button>
         </form>
 
-        <script src="{{ url_for('static', filename='prompt.js') }}"></script>
+        <script src="{{ url_for('static', filename='file.js') }}"></script>
       </main>
     </div>
   </body>

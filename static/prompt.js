@@ -76,6 +76,6 @@ questionButton.addEventListener("click", handleQuestionClick);
 
 function toggleDarkMode() {
   document.body.classList.toggle('dark-mode');
-}
+};
 
 lightDarkToggle.addEventListener('click', toggleDarkMode);

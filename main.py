@@ -48,5 +48,14 @@ def choose_course():
     return render_template('choose_course.html')
 
 
+@app.route('/new_course', methods=['POST'])
+def new_course():
+    message = {}
+    question = request.form["prompt"]
+    message["answer"] = question + "NEIN !"
+    print(message)
+    return message
+
+
 if __name__ == '__main__':
     app.run()
