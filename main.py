@@ -33,16 +33,21 @@ def ask():
 
 
 @app.route("/answer", methods=["POST"])
+# Correction
+@app.route("/answer", methods=['POST'])
 def answer():
     donnereponse = {}
     reponse = request.form["prompt"]
-    donnereponse["answer"] = ask_question_to_pdf(
-        reponse
-        + "ma \
-    reponse est-elle juste ? Si non, quelle était la réponse ?"
-    )[0]
+    donnereponse["answer"] = ask_question_to_pdf(reponse + "ma \
+    réponse est-elle juste ? Si non, quelle était la réponse ?")[0]
     return donnereponse
 
 
-if __name__ == "__main__":
+# Formulaire
+@app.route('/choose_course', methods=['GET'])
+def choose_course():
+    return render_template('choose_course.html')
+
+
+if __name__ == '__main__':
     app.run()
