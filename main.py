@@ -32,7 +32,6 @@ def ask():
     return Questioncours
 
 
-@app.route("/answer", methods=["POST"])
 # Correction
 @app.route("/answer", methods=['POST'])
 def answer():
