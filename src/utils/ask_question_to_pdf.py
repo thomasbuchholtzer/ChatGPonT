@@ -69,12 +69,14 @@ def ask_chatGPT(prompts):
         messages=messages
     )
     # response["choices"][0]["message"]["content"]
-    return [response["message"]["content"] for response in responses["choices"]]
+    return [response["message"]["content"] for response in responses["cho \
+    ices"]]
 
 
 # print(ask_chatGPT(["Who are you ?"]))
 
 def ask_question_to_pdf(question, txtinput=document):
     return ask_chatGPT([question + " : " + txtinput])
+
 
 # print(ask_question_to_pdf("Please summarize the following text"))
