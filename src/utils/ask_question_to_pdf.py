@@ -48,8 +48,9 @@ def read_txt(file):
 
 
 # Course filename and reading
+dirname = "courses"
 filename = "napoleon.txt"
-file = os.path.join(os.path.dirname(__file__), filename)
+file = os.path.join(os.path.join(os.path.dirname(__file__), dirname), filename)
 _, file_extension = os.path.splitext(file)
 
 if file_extension == ".pdf":
