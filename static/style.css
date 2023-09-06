@@ -13,12 +13,12 @@
 .dark-mode {
   --body-background-color: #34373e;
   --main-background-color: #666666;
-  --main-color: #c5c5cf;
+  --main-color: #cdcdcd;
   --max-body-width: 700px;
   --border-color: #333333;
   --secondary-color: #0006d3;
   --loader-bullet-size: 6px;
-  --hover-color: #7b7c81;
+  --hover-color: #7c7c7d;
 }
 
 * {
