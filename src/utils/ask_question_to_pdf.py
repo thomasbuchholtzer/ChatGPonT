@@ -1,10 +1,10 @@
-from io import StringIO
+# from io import StringIO
 import os
 from sys import exit
 import fitz
 import openai
 from dotenv import load_dotenv
-from nltk.tokenize import sent_tokenize
+# from nltk.tokenize import sent_tokenize
 
 load_dotenv()
 
