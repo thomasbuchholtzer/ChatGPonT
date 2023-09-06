@@ -48,7 +48,7 @@ def read_txt(file):
 
 
 # Course filename and reading
-filename = "node_th.txt"
+filename = "napoleon.txt"
 file = os.path.join(os.path.dirname(__file__), filename)
 _, file_extension = os.path.splitext(file)
 
