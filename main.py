@@ -21,7 +21,8 @@ def prompt():
 @app.route('/question', methods=['GET'])
 def ask():
     Questioncours = {}
-    Questioncours['answer'] = "Bonjour"
+    # Questioncours['answer'] = "Bonjour"
+    Questioncours['answer'] = ask_question_to_pdf("Pose-moi une question sur le document suivant")[0]
     return Questioncours
 
 if __name__ == '__main__':
