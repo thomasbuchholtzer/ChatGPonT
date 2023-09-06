@@ -28,6 +28,12 @@ def ask():
     Questioncours["answer"] = ask_question_to_pdf("Pose-moi une question sur le document suivant")[0]
     return Questioncours
 
+@app.route("/answer", methods=['POST'])
+def answer():
+    donnereponse = {}
+    reponse = request.form["prompt"]
+    donnereponse["answer"] = ask_question_to_pdf(reponse + " ma réponse est-elle juste ? si non, quelle était la réponse ?")[0]
+    return donnereponse
 
 if __name__ == '__main__':
     app.run()
