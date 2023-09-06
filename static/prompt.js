@@ -2,6 +2,7 @@ const promptForm = document.getElementById("prompt-form");
 const submitButton = document.getElementById("submit-button");
 const questionButton = document.getElementById("question-button");
 const messagesContainer = document.getElementById("messages-container");
+const lightDarkToggle = document.getElementById("light-dark-button");
 
 const appendHumanMessage = (message) => {
   const humanMessageElement = document.createElement("div");
@@ -71,3 +72,9 @@ const handleQuestionClick = async (event) => {
 };
 
 questionButton.addEventListener("click", handleQuestionClick);
+
+function toggleDarkMode() {
+  document.body.classList.toggle('dark-mode');
+}
+
+lightDarkToggle.addEventListener('click', toggleDarkMode);

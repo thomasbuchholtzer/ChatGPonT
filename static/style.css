@@ -1,4 +1,4 @@
-/* :root {
+:root {
   --body-background-color: #f5f6f8;
   --main-background-color: #ffffff;
   --main-color: #2a303b;
@@ -6,10 +6,11 @@
   --border-color: #cccccc;
   --secondary-color: #fff6d3;
   --loader-bullet-size: 6px;
-} */
+  --hover-color: #f5f6f8;
+}
 
 /* Dark mode */
-:root {
+.dark-mode {
   --body-background-color: #34373e;
   --main-background-color: #666666;
   --main-color: #c5c5cf;
@@ -17,6 +18,7 @@
   --border-color: #333333;
   --secondary-color: #0006d3;
   --loader-bullet-size: 6px;
+  --hover-color: #7b7c81;
 }
 
 * {
@@ -98,7 +100,7 @@ body {
 
 .button:hover,
 .button:active {
-  background-color: var(--body-background-color);
+  background-color: var(--hover-color);
   cursor: pointer;
 }
 
