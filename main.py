@@ -32,6 +32,7 @@ def ask():
     return Questioncours
 
 
+# Correction
 @app.route("/answer", methods=["POST"])
 def answer():
     donnereponse = {}
@@ -39,9 +40,15 @@ def answer():
     donnereponse["answer"] = ask_question_to_pdf(
         reponse
         + "ma \
-    reponse est-elle juste ? Si non, quelle était la réponse ?"
+    réponse est-elle juste ? Si non, quelle était la réponse ?"
     )[0]
     return donnereponse
+
+
+# Formulaire
+@app.route("/choose_course", methods=["GET"])
+def choose_course():
+    return render_template("choose_course.html")
 
 
 if __name__ == "__main__":
