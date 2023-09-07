@@ -49,20 +49,25 @@ def read_txt(file):
 
 
 # Course filename and reading
-dirname = "courses"
-filename = "napoleon.txt"
+dirname_ex = "courses"
+filename_ex = "napoleon.txt"
 
-file = os.path.join(os.path.join(os.path.dirname(__file__), dirname), filename)
-_, file_extension = os.path.splitext(file)
 
-if file_extension == ".pdf":
-    document = read_pdf(file)
-elif file_extension == ".txt":
-    document = read_txt(file)
-else:
-    exit("Error : Unsupported filetype for given resource")
+def read_doc(dirname, filename):
+    file = os.path.join(os.path.join(os.path.dirname(__file__), dirname), filename)
+    _, file_extension = os.path.splitext(file)
+
+    if file_extension == ".pdf":
+        document = read_pdf(file)
+        return document
+    elif file_extension == ".txt":
+        document = read_txt(file)
+        return document
+    else:
+        raise Exception("Error : Unsupported filetype for given resource")
 
 # Ask ChatGPT and print the answer
+
 def ask_chatGPT(prompts):
     messages = [{"role": "user", "content": prompt} for prompt in prompts]
     responses = openai.ChatCompletion.create(
@@ -80,7 +85,7 @@ def ask_chatGPT(prompts):
 # print(ask_chatGPT(["Who are you ?"]))
 
 
-def ask_question_to_pdf(question, txtinput=read_doc(dirname, filename)):
+def ask_question_to_pdf(question, txtinput=read_doc(dirname_ex, filename_ex)):
     return ask_chatGPT([question + " : " + txtinput])
 
 
