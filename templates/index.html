@@ -15,8 +15,14 @@
 
       <main class="main-container">
         
-        <button type="button" class="button" id="light-dark-button">Toggle Light/Dark mode</button>
-        <a class="button" id="rammstein" href="{{ url_for('choose_course', filename='style.css') }}"> Du </a>
+        <div class="button-container">
+          <div class="left">
+            <button type="button" class="button" id="light-dark-button">Changer de palette</button>
+          </div>
+          <div class="right">
+            <a class="button" id="rammstein" href="{{ url_for('choose_course', filename='style.css') }}"> Choisir un autre cours </a>
+          </div>
+        </div>
 
         <header class="header">
           <h1 class="header-title">Chat GPonT</h1>

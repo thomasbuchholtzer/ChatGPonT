@@ -91,6 +91,16 @@ body {
   padding: 5px;
 }
 
+.button-container{
+  display: flex;
+  justify-content: space-between;
+  }
+
+.left, .right{
+display: flex;
+    flex-direction: column;
+}
+
 .button {
   border: 1px solid var(--border-color);
   padding: 5px;

@@ -53,7 +53,8 @@ filename_ex = "napoleon.txt"
 
 
 def read_doc(dirname, filename):
-    file = os.path.join(os.path.join(os.path.dirname(__file__), dirname), filename)
+    file = os.path.join(
+        os.path.join(os.path.dirname(__file__), dirname), filename)
     _, file_extension = os.path.splitext(file)
 
     if file_extension == ".pdf":

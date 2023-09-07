@@ -26,8 +26,7 @@ def ask():
     Questioncours = {}
     # Questioncours["answer"] = "Bonjour"
     Questioncours["answer"] = ask_question_to_pdf(
-        "Pose-moi une question \
-    sur le document suivant"
+        "Pose-moi une question sur le document suivant"
     )[0]
     return Questioncours
 
@@ -38,9 +37,8 @@ def answer():
     donnereponse = {}
     reponse = request.form["prompt"]
     donnereponse["answer"] = ask_question_to_pdf(
-        reponse
-        + "ma \
-    réponse est-elle juste ? Si non, quelle était la réponse ?"
+        reponse + "ma réponse est-elle juste ? \
+        Si non, quelle était la réponse ?"
     )[0]
     return donnereponse
 
@@ -54,9 +52,8 @@ def choose_course():
 @app.route('/new_course', methods=['POST'])
 def new_course():
     message = {}
-    question = request.form["prompt"]
-    message["answer"] = question + "NEIN !"
-    print(message)
+    question = request.form["file"]
+    message["answer"] = question + " NEIN !"
     return message
 
 
