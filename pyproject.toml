@@ -1,5 +1,5 @@
 [tool.poetry]
-name = "ChatGPonT"
+name = "ask_question_to_pdf"
 version = "0.1.0"
 description = "Description du projet"
 authors = ["Votre Nom <votre@email.com>"]
