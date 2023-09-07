@@ -1,0 +1,14 @@
+[tool.poetry]
+name = "chatgpont"
+version = "0.1.0"
+description = ""
+authors = ["Thomas Buchholtzer <thomas.buchholtzer@eleves.enpc.fr>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
