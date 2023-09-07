@@ -66,6 +66,10 @@ def read_doc(dirname, filename):
         raise Exception("Error : Unsupported filetype for given resource")
 
 
+def test_read_doc():
+    assert type(read_doc(dirname_ex, filename_ex)) == str
+
+
 # Ask ChatGPT and print the answer
 def ask_chatGPT(prompts):
     messages = [{"role": "user", "content": prompt} for prompt in prompts]
