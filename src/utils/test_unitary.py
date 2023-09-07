@@ -68,7 +68,6 @@ def read_doc(dirname, filename):
 
 
 # Ask ChatGPT and print the answer
-
 def ask_chatGPT(prompts):
     messages = [{"role": "user", "content": prompt} for prompt in prompts]
     responses = openai.ChatCompletion.create(
@@ -91,3 +90,4 @@ def ask_question_to_pdf(question, txtinput=read_doc(dirname_ex, filename_ex)):
 
 
 # print(ask_question_to_pdf("Please summarize the following text"))
+
