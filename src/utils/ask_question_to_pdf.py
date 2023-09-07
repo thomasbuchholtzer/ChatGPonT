@@ -1,4 +1,3 @@
-# from io import StringIO
 import os
 import fitz
 import openai
@@ -49,7 +48,6 @@ def read_txt(file):
 
 # Course filename and reading
 dirname_ex = "courses"
-filename_ex = "napoleon.txt"
 
 
 def read_doc(dirname, filename):
@@ -82,8 +80,9 @@ def ask_chatGPT(prompts):
 # print(ask_chatGPT(["Who are you ?"]))
 
 
-def ask_question_to_pdf(question, txtinput=read_doc(dirname_ex, filename_ex)):
-    return ask_chatGPT([question + " : " + txtinput])
+def ask_question_to_pdf(question, curfilename, dirname=dirname_ex):
+    txtinput = read_doc(dirname, curfilename)
+    return ask_chatGPT([question + " : \" " + txtinput + " \" "])
 
 
 # print(ask_question_to_pdf("Please summarize the following text"))
