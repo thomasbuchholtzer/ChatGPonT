@@ -37,7 +37,8 @@ def answer():
     donnereponse = {}
     reponse = request.form["prompt"]
     donnereponse["answer"] = ask_question_to_pdf(
-        reponse + "ma réponse est-elle juste ? \
+        reponse
+        "ma réponse est-elle juste ? \
         Si non, quelle était la réponse ?"
     )[0]
     return donnereponse
@@ -49,7 +50,7 @@ def choose_course():
     return render_template("choose_course.html")
 
 
-@app.route('/new_course', methods=['POST'])
+@app.route("/new_course", methods=["POST"])
 def new_course():
     message = {}
     question = request.form["file"]
@@ -57,5 +58,5 @@ def new_course():
     return message
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     app.run()

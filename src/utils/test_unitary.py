@@ -66,19 +66,17 @@ def read_doc(dirname, filename):
         raise Exception("Error : Unsupported filetype for given resource")
 
 
-def test_read_doc():
-    assert type(read_doc(dirname_ex, filename_ex)) == str
-
-
 # Ask ChatGPT and print the answer
+
+
 def ask_chatGPT(prompts):
     messages = [{"role": "user", "content": prompt} for prompt in prompts]
     responses = openai.ChatCompletion.create(
         model="gpt-3.5-turbo-0613", messages=messages
     )
     # response["choices"][0]["message"]["content"]
-    
-    return [response["message"]["content"] for response in responses["choices"]]
+    return [response["message"]["content"]for response in responses["choices"]]
+
 
 # print(ask_chatGPT(["Who are you ?"]))
 
@@ -88,4 +86,7 @@ def ask_question_to_pdf(question, txtinput=read_doc(dirname_ex, filename_ex)):
 
 
 # print(ask_question_to_pdf("Please summarize the following text"))
+
+def test_read_doc():
+    assert type(read_doc(dirname_ex, filename_ex)) == str
 
