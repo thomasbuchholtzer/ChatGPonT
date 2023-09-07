@@ -37,7 +37,7 @@ def answer():
     donnereponse = {}
     reponse = request.form["prompt"]
     donnereponse["answer"] = ask_question_to_pdf(
-        reponse
+        reponse + 
         "ma réponse est-elle juste ? \
         Si non, quelle était la réponse ?"
     )[0]
