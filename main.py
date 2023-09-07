@@ -27,7 +27,7 @@ def index():
 def prompt():
     message = {}
     question = request.form["prompt"]
-    message["answer"] = ask_question_to_pdf(question,curfilename)[0]
+    message["answer"] = ask_question_to_pdf(question, curfilename)[0]
     # message["answer"] = question + "coubehhh {:D"
     return message
 
@@ -70,7 +70,7 @@ def allowed_file(filename):
            filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
 
 
-@app.route('/new_course', methods=['POST'])
+@app.route("/new_course", methods=["POST"])
 def new_course():
     # Reload webpage if no file uploaded
     if 'file' not in request.files:
@@ -89,5 +89,5 @@ def new_course():
         return redirect("/")
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     app.run()

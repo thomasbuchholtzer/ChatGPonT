@@ -51,8 +51,8 @@ dirname_ex = "courses"
 
 
 def read_doc(dirname, filename):
-    file = os.path.join(
-        os.path.join(os.path.dirname(__file__), dirname), filename)
+    file = os.path.join(os.path.join(os.path.dirname(__file__), \
+                                     dirname), filename)
     _, file_extension = os.path.splitext(file)
 
     if file_extension == ".pdf":
@@ -62,10 +62,11 @@ def read_doc(dirname, filename):
         document = read_txt(file)
         return document
     else:
-        raise Exception("Error : Unsupported filetype for given resource")
+        raise Exception("Error : Unsupported filetype")
 
 
 # Ask ChatGPT and print the answer
+
 
 def ask_chatGPT(prompts):
     messages = [{"role": "user", "content": prompt} for prompt in prompts]
@@ -73,8 +74,7 @@ def ask_chatGPT(prompts):
         model="gpt-3.5-turbo-0613", messages=messages
     )
     # response["choices"][0]["message"]["content"]
-    return [response["message"]["content"]
-            for response in responses["choices"]]
+    return [response["message"]["content"] for response in responses["choices"]]
 
 
 # print(ask_chatGPT(["Who are you ?"]))
