@@ -90,3 +90,4 @@ def ask_question_to_pdf(question, txtinput=read_doc(dirname_ex, filename_ex)):
 
 
 # print(ask_question_to_pdf("Please summarize the following text"))
+
