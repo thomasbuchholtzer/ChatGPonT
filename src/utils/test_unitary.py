@@ -1,6 +1,5 @@
 # from io import StringIO
 import os
-from sys import exit
 import fitz
 import openai
 from dotenv import load_dotenv

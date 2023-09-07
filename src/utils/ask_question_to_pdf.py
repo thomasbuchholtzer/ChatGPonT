@@ -1,6 +1,5 @@
 # from io import StringIO
 import os
-from sys import exit
 import fitz
 import openai
 from dotenv import load_dotenv
@@ -68,6 +67,7 @@ def read_doc(dirname, filename):
 
 
 # Ask ChatGPT and print the answer
+
 def ask_chatGPT(prompts):
     messages = [{"role": "user", "content": prompt} for prompt in prompts]
     responses = openai.ChatCompletion.create(
