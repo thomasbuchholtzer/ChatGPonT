@@ -1,6 +1,23 @@
 <!DOCTYPE html>
 <html lang="fr">
   <head>
+  <script>
+  function allowDrop(ev) {
+  ev.preventDefault();
+}
+
+function drag(ev) {
+  ev.dataTransfer.setData("text", ev.target.id);
+}
+
+function drop(ev) {
+  ev.preventDefault();
+  var data = ev.dataTransfer.getData("text");
+  ev.target.appendChild(document.getElementById(data));
+}
+
+
+  </script>
     <title>Chat GPonT</title>
 
     <link
@@ -10,13 +27,12 @@
   </head>
 
   <body>
-
+    <div id="div1" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
     <div>
 
       <main class="main-container">
         
         <button type="button" class="button" id="light-dark-button">Toggle Light/Dark mode</button>
-
         <header class="header">
           <h1 class="header-title">DU</h1>
         </header>
