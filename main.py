@@ -4,7 +4,7 @@ from werkzeug.utils import secure_filename
 from src.utils.ask_question_to_pdf import ask_question_to_pdf
 
 
-curfilename = "pates.txt"
+curfilename = "napoleon.pdf"
 
 
 def change_chosen_course(newname):
