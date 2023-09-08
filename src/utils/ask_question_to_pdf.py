@@ -51,7 +51,7 @@ dirname_ex = "courses"
 
 
 def read_doc(dirname, filename):
-    file = os.path.join(os.path.join(os.path.dirname(__file__), \
+    file = os.path.join(os.path.join(os.path.dirname(__file__),
                                      dirname), filename)
     _, file_extension = os.path.splitext(file)
 
@@ -74,7 +74,8 @@ def ask_chatGPT(prompts):
         model="gpt-3.5-turbo-0613", messages=messages
     )
     # response["choices"][0]["message"]["content"]
-    return [response["message"]["content"] for response in responses["choices"]]
+    return [response["message"]["content"] for response in
+            responses["choices"]]
 
 
 # print(ask_chatGPT(["Who are you ?"]))

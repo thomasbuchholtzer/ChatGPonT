@@ -67,7 +67,7 @@ def choose_course():
 def allowed_file(filename):
     ALLOWED_EXTENSIONS = {'txt', 'pdf'}
     return '.' in filename and \
-           filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
+        filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
 
 
 @app.route("/new_course", methods=["POST"])
