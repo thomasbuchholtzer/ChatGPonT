@@ -57,7 +57,7 @@ def answer():
 # Formulaire
 @app.route("/choose_course", methods=["GET"])
 def choose_course():
-    return render_template("choose_course.html")
+    return render_template("choose_course.html", title="Nouveau cours")
 
 # Code borrowed from :
 # https://flask.palletsprojects.com/en/2.3.x/patterns/fileuploads/
@@ -73,11 +73,11 @@ def allowed_file(filename):
 def new_course():
     # Reload webpage if no file uploaded
     if 'file' not in request.files:
-        return render_template("choose_course.html", title="Accueil")
+        return render_template("choose_course.html", title="Nouveau cours")
     UPLOAD_FOLDER = 'src/utils/courses'
     file = request.files['file']
     if file.filename == '':
-        return render_template("choose_course.html", title="Accueil")
+        return render_template("choose_course.html", title="Nouveau cours")
     # Upload valid file
     if file and allowed_file(file.filename):
         filename = secure_filename(file.filename)
@@ -86,6 +86,7 @@ def new_course():
         change_chosen_course(filename)
         # URL redirect to index page
         return redirect("/")
+    return render_template("choose_course.html", title="Nouveau cours")
 
 
 if __name__ == "__main__":
