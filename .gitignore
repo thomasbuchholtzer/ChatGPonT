@@ -5,3 +5,4 @@ __pycache__/
 src/utils/.venv/
 src/utils/__pycache__/
 draft.py
+src/utils/courses/
