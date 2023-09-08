@@ -47,11 +47,6 @@ def read_txt(file):
     return context
 
 
-# Course filename and reading
-dirname_ex = "courses"
-filename_ex = "napoleon.txt"
-
-
 def read_doc(dirname, filename):
     file = os.path.join(
         os.path.join(os.path.dirname(__file__), dirname), filename)
@@ -90,5 +85,15 @@ def ask_question_to_pdf(question, txtinput=read_doc(dirname_ex, filename_ex)):
 # print(ask_question_to_pdf("Please summarize the following text"))
 
 
+# Test phase
+
+dirname_ex1 = "courses"
+filename_ex1 = "napoleon.txt"
+
+dirname_ex2 = "courses"
+filename_ex2 = "filename.pdf"
+
+
 def test_read_doc():
-    assert type(read_doc(dirname_ex, filename_ex)) == str
+    assert type(read_doc(dirname_ex1, filename_ex1)) == str
+    assert type(read_doc(dirname_ex2, filename_ex2)) == str
