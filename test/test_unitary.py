@@ -3,6 +3,7 @@ import os
 import fitz
 import openai
 from dotenv import load_dotenv
+import pytest
 
 # from nltk.tokenize import sent_tokenize
 
@@ -59,7 +60,7 @@ def read_doc(dirname, filename):
         document = read_txt(file)
         return document
     else:
-        raise Exception("Error : Unsupported filetype for given resource")
+        raise Exception("Wrong filetype")
 
 
 # Ask ChatGPT and print the answer
@@ -78,13 +79,17 @@ def ask_chatGPT(prompts):
 # print(ask_chatGPT(["Who are you ?"]))
 
 
-dirname_ex1 = "courses"
-filename_ex1 = "napoleon.txt"
+dirname_1 = "courses"
+filename_1 = "napoleon.txt"
 
-dirname_ex2 = "courses"
-filename_ex2 = "filename.pdf"
+dirname_2 = "courses"
+filename_2 = "filename.pdf"
 
-def ask_question_to_pdf(question, txtinput=read_doc(dirname_ex1, filename_ex1)):
+dirname_3 = "courses"
+filename_3 = "logo.jpg"
+
+
+def ask_question_to_pdf(question, txtinput=read_doc(dirname_1, filename_1)):
     return ask_chatGPT([question + " : " + txtinput])
 
 
@@ -92,5 +97,10 @@ def ask_question_to_pdf(question, txtinput=read_doc(dirname_ex1, filename_ex1)):
 
 
 def test_read_doc():
-    assert type(read_doc(dirname_ex1, filename_ex1)) == str
-    assert type(read_doc(dirname_ex2, filename_ex2)) == str
+    assert type(read_doc(dirname_1, filename_1)) == str
+    assert type(read_doc(dirname_2, filename_2)) == str
+
+    with pytest.raises(Exception) as excinfo:
+        read_doc(dirname_3, filename_3)
+
+    assert "Wrong filetype" in str(excinfo.value)
