@@ -27,6 +27,7 @@ jobs:
       - name: Install dependencies
         run: |
           pip install pytest
+          pip install PyMuPDF
 
       - name: Run unit tests
         run: python -m pytest 
