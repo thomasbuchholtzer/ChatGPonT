@@ -28,6 +28,8 @@ jobs:
         run: |
           pip install pytest
           pip install PyMuPDF
+          pip install os
+          pip install openai
 
       - name: Run unit tests
         run: python -m pytest 
