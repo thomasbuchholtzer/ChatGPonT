@@ -98,4 +98,8 @@ def ask_question_to_pdf(question, txtinput=read_doc(dirname_1, filename_1)):
 def test_read_doc():
     assert type(read_doc(dirname_1, filename_1)) == str
     assert type(read_doc(dirname_2, filename_2)) == str
-    assertRaises("Wrong filetype", read_doc(dirname_3, filename_3))
+
+    with pytest.raises(Exception) as excinfo:
+        read_doc(dirname_3, filename_3)
+
+    assert "Wrong filetype" in str(excinfo.value)
