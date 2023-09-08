@@ -3,6 +3,7 @@ import os
 import fitz
 import openai
 from dotenv import load_dotenv
+import pytest
 
 # from nltk.tokenize import sent_tokenize
 
