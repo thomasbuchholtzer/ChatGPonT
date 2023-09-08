@@ -71,7 +71,7 @@ def read_doc(dirname, filename):
 def ask_chatGPT(prompts):
     messages = [{"role": "user", "content": prompt} for prompt in prompts]
     responses = openai.ChatCompletion.create(
-        model="gpt-3.5-turbo-0613", messages=messages
+        model="gpt-4-0613", messages=messages
     )
     # response["choices"][0]["message"]["content"]
     return [response["message"]["content"] for response in
@@ -87,3 +87,5 @@ def ask_question_to_pdf(question, curfilename, dirname=dirname_ex):
 
 
 # print(ask_question_to_pdf("Please summarize the following text"))
+
+print([mdl['id'] for mdl in openai.Model.list()["data"]])
