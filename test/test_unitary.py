@@ -78,20 +78,17 @@ def ask_chatGPT(prompts):
 # print(ask_chatGPT(["Who are you ?"]))
 
 
-def ask_question_to_pdf(question, txtinput=read_doc(dirname_ex, filename_ex)):
-    return ask_chatGPT([question + " : " + txtinput])
-
-
-# print(ask_question_to_pdf("Please summarize the following text"))
-
-
-# Test phase
-
 dirname_ex1 = "courses"
 filename_ex1 = "napoleon.txt"
 
 dirname_ex2 = "courses"
 filename_ex2 = "filename.pdf"
+
+def ask_question_to_pdf(question, txtinput=read_doc(dirname_ex1, filename_ex1)):
+    return ask_chatGPT([question + " : " + txtinput])
+
+
+# print(ask_question_to_pdf("Please summarize the following text"))
 
 
 def test_read_doc():
