@@ -59,7 +59,7 @@ def read_doc(dirname, filename):
         document = read_txt(file)
         return document
     else:
-        raise Exception("Error : Unsupported filetype for given resource")
+        raise Exception("Wrong filetype")
 
 
 # Ask ChatGPT and print the answer
@@ -84,6 +84,9 @@ filename_1 = "napoleon.txt"
 dirname_2 = "courses"
 filename_2 = "filename.pdf"
 
+dirname_3 = "courses"
+filename_3 = "logo.jpg"
+
 
 def ask_question_to_pdf(question, txtinput=read_doc(dirname_1, filename_1)):
     return ask_chatGPT([question + " : " + txtinput])
@@ -95,3 +98,4 @@ def ask_question_to_pdf(question, txtinput=read_doc(dirname_1, filename_1)):
 def test_read_doc():
     assert type(read_doc(dirname_1, filename_1)) == str
     assert type(read_doc(dirname_2, filename_2)) == str
+    assertRaises("Wrong filetype", read_doc(dirname_3, filename_3))
